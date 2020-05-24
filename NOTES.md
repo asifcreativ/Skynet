@@ -4,3 +4,11 @@
 # GIT commit
     1. git add .
     2. git commit -m "message"
+
+# dotnet ef migrations
+    -p Infrastructure -s API -o Data/Migrations
+
+# Entity Framework -> Lazy loading | Eager Loading
+
+
+add entities Brands and Types; add seed data; implemented APIs for get Brands and Types
