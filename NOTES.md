@@ -1,2 +1,6 @@
 # GIT setup
-    1. git init -> Initialized empty Git repository
+    git init -> Initialized empty Git repository
+
+# GIT commit
+    1. git add .
+    2. git commit -m "message"
