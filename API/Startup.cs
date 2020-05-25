@@ -1,3 +1,5 @@
+using API.Helpers;
+using AutoMapper;
 using Core.Interfaces;
 using Infrastructure.Data;
 using Microsoft.AspNetCore.Builder;
@@ -24,6 +26,8 @@ namespace API
         {
             // Note: LIFE CYCLES: AddSingleton -> remain alive until app shutdown | AddTransient -> instinated for individual methond and have short lifespan.
             services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            services.AddAutoMapper(typeof(MappingProfiles));
             services.AddControllers();
             services.AddDbContext<StoreContext>(options =>
             {
@@ -42,6 +46,7 @@ namespace API
             // app.UseHttpsRedirection(); FIXME: disable HTTPS for development
 
             app.UseRouting();
+            app.UseStaticFiles();
 
             app.UseAuthorization();
 

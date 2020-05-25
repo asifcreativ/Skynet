@@ -12,3 +12,5 @@
 
 
 add entities Brands and Types; add seed data; implemented APIs for get Brands and Types
+
+generic repository; specification pattern; DTOs; add auto mapper;
