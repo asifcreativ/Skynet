@@ -55,7 +55,7 @@ namespace API
 
             app.UseStatusCodePagesWithReExecute("/errors/{0}");
 
-            // app.UseHttpsRedirection(); FIXME: disable HTTPS for development
+            app.UseHttpsRedirection(); // https enable
 
             app.UseRouting();
             app.UseStaticFiles();

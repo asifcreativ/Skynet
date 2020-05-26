@@ -19,3 +19,5 @@ error handling and exception; http response error; server error; validation erro
 
 # OR/Else condition
 sorting; filtering; searching; paging; add CORS;
+
+setup angular project;
