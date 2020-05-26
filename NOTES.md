@@ -16,3 +16,6 @@ add entities Brands and Types; add seed data; implemented APIs for get Brands an
 generic repository; specification pattern; DTOs; add auto mapper;
 
 error handling and exception; http response error; server error; validation error; Adding Swagger for documenting API; clean up the Startup class;
+
+# OR/Else condition
+sorting; filtering; searching; paging; add CORS;
