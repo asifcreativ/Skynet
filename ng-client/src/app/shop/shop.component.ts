@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { ILookup } from '../shared/models/lookup';
 import { IProduct } from '../shared/models/product';
 import { ShopParams } from '../shared/models/shopParams';
-import { ILookup } from './product-item/lookup';
 import { ShopService } from './shop.service';
 
 @Component({

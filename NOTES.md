@@ -46,3 +46,7 @@ implement navbar; add http client module;
 # pipe() is warper around rxjs methods e.g. map(), delay(). we can chain rxjs methods inside pipe()
 
 
+implement shop component, client side paging, searching and filtering 
+
+setup routing; nav links; module lazy loading
+
