@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+
+// Bootstrap styles override
+.container-fluid {
+    width: 100%;
+    padding-right: 100px;
+    padding-left: 100px;
+    margin-right: auto;
+    margin-left: auto;
+}

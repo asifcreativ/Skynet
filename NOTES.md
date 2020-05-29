@@ -21,3 +21,28 @@ error handling and exception; http response error; server error; validation erro
 sorting; filtering; searching; paging; add CORS;
 
 setup angular project;
+
+implement navbar; add http client module;
+
+# Angular module structure
+    App Module
+        Code Module: singleton e.g. navbar
+        Shared Module: shared component
+        Feature Module: app features each feature will have it's own module and routing
+
+# Angular CLI commands for generate components
+    c: for component
+    m: for module
+    s: for service
+    --flat: do not create separate folder
+    --skip-tests: do not include test files
+
+    ng g c/m/s component-name --flat --skip-tests
+
+# *ngFor, *ngIf -> * mean it's gonna change the DOM
+
+# bootstrap h-100 -> all the carts will be equal hights
+
+# pipe() is warper around rxjs methods e.g. map(), delay(). we can chain rxjs methods inside pipe()
+
+
