@@ -8,3 +8,19 @@
     margin-right: auto;
     margin-left: auto;
 }
+
+// Override xng-breadcrumb styles
+.xng-breadcrumb-root {
+    padding: 8px, 16px;
+    display: inline;
+    border-radius: 0;
+}
+
+label.xng-breadcrumb-trail {
+    margin-bottom: 0;
+    color: orange;
+}
+
+.xnt-breadcrumb-separator {
+    padding: 0;
+}

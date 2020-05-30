@@ -10,7 +10,7 @@ import { ShopService } from './shop.service';
     styleUrls: ['./shop.component.scss']
 })
 export class ShopComponent implements OnInit {
-    @ViewChild('searchInput', { static: true }) searchInput: ElementRef;
+    @ViewChild('searchInput', { static: false }) searchInput: ElementRef;
     products: IProduct[] = [];
     /** total product counts in DB */
     totalItems = 0;

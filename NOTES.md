@@ -54,3 +54,7 @@ error handling;http interceptor; toast notification;
 
 PASS state via router
 
+improve UI; add page header, breadcrumbs; style product items; add loading icon; change bootstrap theme; improve home page;  
+
+# async: pipe in html template -> subscript and automatically unsubscribe observable when component destroyed
+
