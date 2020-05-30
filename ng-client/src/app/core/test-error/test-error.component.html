@@ -1,0 +1,25 @@
+<div>
+    <button class="btn btn-outline-danger mr-4"
+            (click)="get400Error()">
+        400 Bad Request
+    </button>
+    <button class="btn btn-outline-danger mr-4"
+            (click)="get400ValidationError()">
+        400 Validation
+    </button>
+    <button class="btn btn-outline-danger mr-4"
+            (click)="get404Error()">
+        404 Not Found
+    </button>
+    <button class="btn btn-outline-danger mr-4"
+            (click)="get500Error()">
+        500 Sever Error
+    </button>
+
+    <div class="row mt-5"
+         *ngIf="validationErrors">
+        <ul class="text-danger">
+            <li *ngFor="let item of validationErrors">{{item}}</li>
+        </ul>
+    </div>
+</div>

@@ -50,3 +50,7 @@ implement shop component, client side paging, searching and filtering
 
 setup routing; nav links; module lazy loading
 
+error handling;http interceptor; toast notification;
+
+PASS state via router
+
