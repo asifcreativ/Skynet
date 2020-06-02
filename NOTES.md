@@ -58,3 +58,16 @@ improve UI; add page header, breadcrumbs; style product items; add loading icon;
 
 # async: pipe in html template -> subscript and automatically unsubscribe observable when component destroyed
 
+
+# Redis -> is in memory datastore (cashing)
+# Redis commands:
+    redis-server
+    redis-cli
+        ping
+    # how to shutdown redis?
+    quit
+        redis-cli
+            shutdown
+
+
+# add Redis to API; create basket repository and controller

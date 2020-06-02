@@ -17,6 +17,7 @@ namespace API.Extensions
             // AddTransient -> instinated for individual methond and have short lifespan.
 
             services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<IBasketRepository, BasketRepository>();
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 
             // configure handle validation error
