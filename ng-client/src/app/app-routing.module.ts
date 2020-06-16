@@ -16,6 +16,16 @@ const routes: Routes = [
         loadChildren: () => import('./shop/shop.module').then(mod => mod.ShopModule), // Lazy load module
         data: { breadcrumb: 'Shop' }
     },
+    {
+        path: 'basket',
+        loadChildren: () => import('./basket/basket.module').then(mod => mod.BasketModule), // Lazy load module
+        data: { breadcrumb: 'Basket' }
+    },
+    {
+        path: 'checkout',
+        loadChildren: () => import('./checkout/checkout.module').then(mod => mod.CheckoutModule), // Lazy load module
+        data: { breadcrumb: 'checkout' }
+    },
     { path: '**', redirectTo: 'not-found', pathMatch: 'full' } // wildcard
 ];
 

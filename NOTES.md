@@ -70,4 +70,15 @@ improve UI; add page header, breadcrumbs; style product items; add loading icon;
             shutdown
 
 
-# add Redis to API; create basket repository and controller
+ add Redis to API; create basket repository and controller; client-side implementation basket; behavior subject; async pipe
+
+
+
+# Generate files
+    ng g m <MODULE_NAME>
+    cd <MODULE_NAME>
+    ng g m <MODULE_NAME-routing> --flat
+    ng g c <COMPONENT_NAME> --flat --skip-tests
+    ng g s <SERVICE_NAME> --flat --skip-tests
+
+
