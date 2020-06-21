@@ -4,11 +4,18 @@
 # GIT commit
     1. git add .
     2. git commit -m "message"
+    3. git push origin master
 
 # dotnet ef migrations
-    -p Infrastructure -s API -o Data/Migrations
+    -p Infrastructure -s API -o Data/Migrations 
+        -c DbContext
+    
+    REMOVE MIGRATION: dotnet ef migrations remove -p infrastructure -s API -c AppIdentityDbContext
+    ADD MIGRATION: dotnet ef migrations add IdentityInitial -p infrastructure -s API -o Identity/Migrations -c AppIdentityDbContext
 
 # Entity Framework -> Lazy loading | Eager Loading
+
+# https://localhost:5001/swagger
 
 
 add entities Brands and Types; add seed data; implemented APIs for get Brands and Types
@@ -71,6 +78,11 @@ improve UI; add page header, breadcrumbs; style product items; add loading icon;
 
 
  add Redis to API; create basket repository and controller; client-side implementation basket; behavior subject; async pipe
+
+ setting up ASP.NET identity
+    user manager
+    sign-in manager
+    JWT
 
 
 

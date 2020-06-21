@@ -2,6 +2,7 @@ using System.Linq;
 using API.Errors;
 using Core.Interfaces;
 using Infrastructure.Data;
+using Infrastructure.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -16,6 +17,7 @@ namespace API.Extensions
             // AddSingleton -> remain alive until app shutdown
             // AddTransient -> instinated for individual methond and have short lifespan.
 
+            services.AddScoped<ITokenService, TokenService>();
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<IBasketRepository, BasketRepository>();
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));

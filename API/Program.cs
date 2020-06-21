@@ -1,7 +1,10 @@
 using System;
 using System.Threading.Tasks;
+using Core.Entities.Identity;
 using Infrastructure.Data;
+using Infrastructure.Identity;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -18,15 +21,21 @@ namespace API
             // Create datbase at app startup
             using (var scope = host.Services.CreateScope())
             {
-                var service = scope.ServiceProvider;
-                var loggerFactory = service.GetRequiredService<ILoggerFactory>();
+                var services = scope.ServiceProvider;
+                var loggerFactory = services.GetRequiredService<ILoggerFactory>();
 
                 try
                 {
-                    var context = service.GetRequiredService<StoreContext>();
+                    var context = services.GetRequiredService<StoreContext>();
                     await context.Database.MigrateAsync();
                     // Seed data
                     await StoreContextSeed.SeedAsync(context, loggerFactory);
+
+                    // SEED IDENTITY DATA
+                    var userManager = services.GetRequiredService<UserManager<AppUser>>();
+                    var identityContext = services.GetRequiredService<AppIdentityDbContext>();
+                    await identityContext.Database.MigrateAsync();
+                    await AppIdentityDbContextSeed.SeedUsersAsync(userManager);
                 }
                 catch (Exception ex)
                 {
