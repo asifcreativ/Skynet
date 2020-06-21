@@ -17,6 +17,29 @@ namespace API.Extensions
                                 Title = "Skynet API",
                                 Version = "v1"
                             });
+
+                            var securitySchema = new OpenApiSecurityScheme
+                            {
+                                Description = "JWT Auth Bearer Scheme",
+                                Name = "Authorization",
+                                In = ParameterLocation.Header,
+                                Type = SecuritySchemeType.Http,
+                                Scheme = "Bearer",
+                                Reference = new OpenApiReference
+                                {
+                                    Type = ReferenceType.SecurityScheme,
+                                    Id = "Bearer"
+                                }
+                            };
+
+                            option.AddSecurityDefinition("Bearer", securitySchema);
+
+                            var securityRequirement = new OpenApiSecurityRequirement
+                            {
+                                {securitySchema, new []{"Bearer"}}
+                            };
+
+                            option.AddSecurityRequirement(securityRequirement);
                         });
 
             return services;

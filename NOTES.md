@@ -84,6 +84,8 @@ improve UI; add page header, breadcrumbs; style product items; add loading icon;
     sign-in manager
     JWT
 
+add validation; update swagger configuration
+
 
 
 # Generate files
