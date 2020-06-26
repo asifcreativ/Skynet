@@ -86,6 +86,8 @@ improve UI; add page header, breadcrumbs; style product items; add loading icon;
 
 add validation; update swagger configuration
 
+add account feature; implement form; client side validation; async validation;
+
 
 
 # Generate files
@@ -94,5 +96,9 @@ add validation; update swagger configuration
     ng g m <MODULE_NAME-routing> --flat
     ng g c <COMPONENT_NAME> --flat --skip-tests
     ng g s <SERVICE_NAME> --flat --skip-tests
+
+
+# ControlValueAccessor
+    Defines an interface that acts as a bridge between the Angular forms API and a native element in the DOM
 
 
