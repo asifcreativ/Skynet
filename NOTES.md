@@ -8,7 +8,7 @@
 
 # dotnet ef migrations
     -p Infrastructure -s API -o Data/Migrations 
-        -c DbContext
+        -c DbContext ->    -p Infrastructure -s API -c StoreContext
     
     REMOVE MIGRATION: dotnet ef migrations remove -p infrastructure -s API -c AppIdentityDbContext
     ADD MIGRATION: dotnet ef migrations add IdentityInitial -p infrastructure -s API -o Identity/Migrations -c AppIdentityDbContext
@@ -101,4 +101,6 @@ add account feature; implement form; client side validation; async validation;
 # ControlValueAccessor
     Defines an interface that acts as a bridge between the Angular forms API and a native element in the DOM
 
+
+add order entity; aggregate entities; unit of work pattern
 
