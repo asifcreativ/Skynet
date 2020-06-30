@@ -104,3 +104,5 @@ add account feature; implement form; client side validation; async validation;
 
 add order entity; aggregate entities; unit of work pattern
 
+implement checkout; multi step form (Form Wizard); use HttpInterceptor to send JWT token with request; update the form data with the data from API
+

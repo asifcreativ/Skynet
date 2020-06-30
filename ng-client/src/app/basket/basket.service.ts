@@ -4,6 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { Basket, IBasket, IBasketItem, IBasketTotals } from '../shared/models/basket';
+import { IDeliveryMethod } from '../shared/models/deliveryMethod';
 import { IProduct } from '../shared/models/product';
 
 
@@ -12,14 +13,19 @@ import { IProduct } from '../shared/models/product';
 })
 export class BasketService {
     baseUrl = environment.apiUrl;
-
     // BehaviorSubject use to access data in multiple views/components
     private basketSource = new BehaviorSubject<IBasket>(null);
     basket$ = this.basketSource.asObservable();
     private basketTotalSource = new BehaviorSubject<IBasketTotals>(null);
     basketTotal$ = this.basketTotalSource.asObservable();
+    private shipping = 0;
 
     constructor(private http: HttpClient) { }
+
+    setShippingPrice(deliveryMethod: IDeliveryMethod) {
+        this.shipping = deliveryMethod.price;
+        this.calculateTotals();
+    }
 
     getBasket(id: string) { // this method used by async pipe
         return this.http.get<IBasket>(`${this.baseUrl}basket?id=${id}`)
@@ -94,6 +100,12 @@ export class BasketService {
         }
     }
 
+    deleteLocalBasket() {
+        this.basketSource.next(null);
+        this.basketTotalSource.next(null);
+        localStorage.removeItem('basket_id');
+    }
+
     deleteBasket(basket: IBasket) {
         return this.http.delete(`${this.baseUrl}basket?id=${basket.id}`).subscribe(() => {
             this.basketSource.next(null);
@@ -137,7 +149,7 @@ export class BasketService {
 
     private calculateTotals() {
         const basket = this.getCurrentBasketValue();
-        const shipping = 0;
+        const shipping = this.shipping;
         const subtotal = basket.items.reduce((acc, curr) => (curr.price * curr.quantity) + acc, 0);
         const total = shipping + subtotal;
 

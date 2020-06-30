@@ -26,8 +26,6 @@ export class BasketComponent implements OnInit {
   }
 
   decrementBasketItem(item: IBasketItem) {
-    console.log('hello');
-
     this.basketService.decrementItemQuantity(item);
   }
 
