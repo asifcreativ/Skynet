@@ -15,14 +15,14 @@ export interface IOrder {
     shipToAddress: IAddress;
     deliveryMethod: string;
     shippingPrice: number;
-    orderItems: IOrderItemDto[];
+    orderItems: IOrderItem[];
     subtotal: number;
     status: string;
     total: number;
 }
 
 
-export interface IOrderItemDto {
+export interface IOrderItem {
     productId: number;
     productName: string;
     productUrl: string;

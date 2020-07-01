@@ -106,3 +106,5 @@ add order entity; aggregate entities; unit of work pattern
 
 implement checkout; multi step form (Form Wizard); use HttpInterceptor to send JWT token with request; update the form data with the data from API
 
+implement view order; display order history;
+
