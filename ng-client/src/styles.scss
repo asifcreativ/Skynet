@@ -24,3 +24,8 @@ label.xng-breadcrumb-trail {
 .xnt-breadcrumb-separator {
     padding: 0;
 }
+
+// override stripe CSS
+.StripeElement {
+    height: 2.125em;
+}
