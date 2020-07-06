@@ -110,3 +110,5 @@ implement view order; display order history;
 
 setup stripe account; PCI DSS Compliance; strong customer authentication; setting up payment intents; use stripe elements; validate card; confirm the card payment; webhooks;
 
+api performance; client performance; setup caching on the API; implement caching on the client;
+

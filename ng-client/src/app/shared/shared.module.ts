@@ -1,7 +1,7 @@
 import { CdkStepperModule } from '@angular/cdk/stepper';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
@@ -30,6 +30,7 @@ import { PagerComponent } from './pager/pager.component';
         BsDropdownModule.forRoot(),
         RouterModule,
         ReactiveFormsModule,
+        FormsModule,
         CdkStepperModule
     ],
     exports: [
@@ -37,6 +38,7 @@ import { PagerComponent } from './pager/pager.component';
         PaginationModule,
         CarouselModule,
         ReactiveFormsModule,
+        FormsModule,
         BsDropdownModule,
         CdkStepperModule,
         // Components

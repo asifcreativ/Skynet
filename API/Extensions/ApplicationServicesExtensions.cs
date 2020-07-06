@@ -17,6 +17,8 @@ namespace API.Extensions
             // AddSingleton -> remain alive until app shutdown
             // AddTransient -> instinated for individual methond and have short lifespan.
 
+            services.AddSingleton<IResponseCacheService, ResponseCacheService>();
+
             services.AddScoped<ITokenService, TokenService>();
             services.AddScoped<IOrderService, OrderService>();
             services.AddScoped<IPaymentService, PaymentService>();

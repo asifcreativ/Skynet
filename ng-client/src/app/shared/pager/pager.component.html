@@ -1,12 +1,10 @@
-<p>pager works!</p>
-<pagination
-    [boundaryLinks]="true"
-    [totalItems]="totalItems"
-    previousText="&lsaquo;"
-    nextText="&rsaquo;"
-    firstText="&laquo;"
-    lastText="&raquo;"
-    [itemsPerPage]="pageSize"
-    (pageChanged)="onPageChanged($event)"
->
+<pagination [boundaryLinks]="true"
+            [totalItems]="totalItems"
+            previousText="&lsaquo;"
+            nextText="&rsaquo;"
+            firstText="&laquo;"
+            lastText="&raquo;"
+            [ngModel]="pageIndex"
+            [itemsPerPage]="pageSize"
+            (pageChanged)="onPageChanged($event)">
 </pagination>
