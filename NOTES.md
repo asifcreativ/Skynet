@@ -7,8 +7,11 @@
     3. git push origin master
 
 # dotnet ef migrations
+    dotnet ef migrations add "MySQL Initial" -p Infrastructure -s API -c StoreContext -o Data/Migrations
     -p Infrastructure -s API -o Data/Migrations 
         -c DbContext ->    -p Infrastructure -s API -c StoreContext
+
+    dotnet publish -c Release -o publish Skynet.sln
     
     REMOVE MIGRATION: dotnet ef migrations remove -p infrastructure -s API -c AppIdentityDbContext
     ADD MIGRATION: dotnet ef migrations add IdentityInitial -p infrastructure -s API -o Identity/Migrations -c AppIdentityDbContext
@@ -65,6 +68,20 @@ improve UI; add page header, breadcrumbs; style product items; add loading icon;
 
 # async: pipe in html template -> subscript and automatically unsubscribe observable when component destroyed
 
+# MySQL setup
+    mysql -u root -p
+    CREATE USER 'appuser'@'localhost' IDENTIFIED BY 'password';
+    GRANT ALL PRIVILEGES ON * . * TO 'appuser'@'localhost' WITH GRANT OPTION;
+    FLUSH PRIVILEGES;
+
+# SQL Server connection string 
+     "ConnectionStrings": {
+        "DefaultConnection": "Server=LocalHost;Database=Skynet;User Id=sa;Password=P@55w0rd;"
+     },
+
+# Environment
+    export ASPNETCORE_ENVIRONMENT=Development
+    export ASPNETCORE_ENVIRONMENT=Production
 
 # Redis -> is in memory datastore (cashing)
 # Redis commands:
@@ -111,4 +128,6 @@ implement view order; display order history;
 setup stripe account; PCI DSS Compliance; strong customer authentication; setting up payment intents; use stripe elements; validate card; confirm the card payment; webhooks;
 
 api performance; client performance; setup caching on the API; implement caching on the client;
+
+prepare the app for publish; switch database to MySql; publish app to linux server;
 
